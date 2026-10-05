@@ -71,23 +71,54 @@
 //   }
 // }
 
-enum Awards { Gold, Silver, bronze, noMedal }
+// enum Awards { Gold, Silver, bronze, noMedal }
+
+// void main() {
+//   const award = Awards.noMedal;
+
+//   switch (award) {
+//     case Awards.Gold:
+//       print('gold');
+//       break;
+//     case Awards.Silver:
+//       print('silver');
+//       break;
+//     case Awards.bronze:
+//       print('bronze');
+//       break;
+//     case Awards.noMedal:
+//       print('Nothing for you');
+//       break;
+//   }
+// }
+
+enum Days { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
 
 void main() {
-  const award = Awards.noMedal;
+  const day = Days.Sunday;
 
-  switch (award) {
-    case Awards.Gold:
-      print('gold');
+  switch (day) {
+    case Days.Monday:
+      print("Monday");
       break;
-    case Awards.Silver:
-      print('silver');
+    case Days.Tuesday:
+      print('Tuesday');
       break;
-    case Awards.bronze:
-      print('bronze');
+    case Days.Wednesday:
+      print("Wednesday");
       break;
-    case Awards.noMedal:
-      print('Nothing for you');
+    case Days.Thursday:
+      print('Thursday');
+      break;
+    case Days.Friday:
+      print("Friday");
+      break;
+    case Days.Saturday:
+      print('Saturday');
+      break;
+
+    default:
+      print("ITs The sabathday");
       break;
   }
 }
