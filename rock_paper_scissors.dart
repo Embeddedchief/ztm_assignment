@@ -10,24 +10,40 @@
 import 'dart:io';
 import 'dart:math';
 
+//enum method to store moves
+
+enum moves { Rock, Paper, Scissors }
+
 //Start point of the program
 void main() {
-  while (true) {
-    //write out the instruction to user
-    stdout.write('Rock, paper or scissors? (r,p,s) ');
+  //create random holder and assign random method to it
+  var computerChoice = Random();
+  var playerChoice;
 
-    //Take user input through prompt
+  while (true) {
+    //send out a prompt
+    stdout.write('Rock, Paper, Scissors: ');
+    //take the response and assign it to input
     final input = stdin.readLineSync();
 
-    //conditional statement to handle user choices
+    //conditional statement to handle the possible outcomes
     if (input == 'r' || input == 'p' || input == 's') {
-      print('You picked $input');
-      continue;
+      //confirmation a right choice is made
+      print('Valid choice');
+      if (input == 'r') {
+        playerChoice == moves.Rock;
+      } else if (input == 'p') {
+        playerChoice == moves.Paper;
+      } else {
+        playerChoice == moves.Scissors;
+      }
     } else if (input == 'q') {
-      print('Thank you for playing');
+      //to thank the player for playing and quit the game when q is selected
+      print('Thanks for playing');
       break;
     } else {
-      print('Invalid choice');
+      //to inform user of invalid choice, when selected option is not r, p, s or q and continue the game
+      print('Invalid choice, pick again');
       continue;
     }
   }
