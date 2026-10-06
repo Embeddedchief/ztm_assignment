@@ -44,12 +44,14 @@ void main() {
 
       if (playerChoice == computerChoice) {
         print('Its a draw');
-      } else if (playerChoice == moves.Rock && computerChoice == moves.Scissors || playerChoice == moves.Paper){
+      } else if (playerChoice == moves.Rock &&
+              computerChoice == moves.Scissors ||
+          playerChoice == moves.Paper && computerChoice == moves.Rock ||
+          playerChoice == moves.Scissors && computerChoice == moves.Paper) {
         print('You win');
       } else {
         print('You lose');
       }
-
     } else if (input == 'q') {
       //to thank the player for playing and quit the game when q is selected
       print('Thanks for playing');
