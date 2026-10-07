@@ -7,7 +7,6 @@
 //if the user picks a valid move, generate a pick at random and compare with users pick according to the rule of the game
 
 //import libraries for input/output and randomize
-import 'dart:developer';
 import 'dart:io';
 import 'dart:math';
 
@@ -30,17 +29,19 @@ void main() {
     //conditional statement to handle the possible outcomes
     if (input == 'r' || input == 'p' || input == 's') {
       //confirmation a right choice is made
-      print('Valid choice');
       if (input == 'r') {
-        playerChoice == moves.Rock;
+        playerChoice = moves.Rock;
       } else if (input == 'p') {
-        playerChoice == moves.Paper;
+        playerChoice = moves.Paper;
       } else {
-        playerChoice == moves.Scissors;
+        playerChoice = moves.Scissors;
       }
       //setting the random inputs
       final random = loop.nextInt(3);
       final computerChoice = moves.values[random];
+
+      print('Computer choosed $computerChoice');
+      print('You choosed $playerChoice');
 
       if (playerChoice == computerChoice) {
         print('Its a draw');
