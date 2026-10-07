@@ -28,6 +28,7 @@ void main() {
 
     //conditional statement to handle the possible outcomes
     if (input == 'r' || input == 'p' || input == 's') {
+
       //confirmation a right choice is made
       if (input == 'r') {
         playerChoice = moves.Rock;
@@ -36,6 +37,7 @@ void main() {
       } else {
         playerChoice = moves.Scissors;
       }
+      
       //setting the random inputs
       final random = loop.nextInt(3);
       final computerChoice = moves.values[random];
@@ -53,6 +55,8 @@ void main() {
       } else {
         print('You lose');
       }
+
+
     } else if (input == 'q') {
       //to thank the player for playing and quit the game when q is selected
       print('Thanks for playing');
