@@ -18,20 +18,23 @@ void main() {
     'vegetarian': 6.5,
   };
 
+  //variable to take total value
+  dynamic total = 0;
+
   while (true) {
-    stdout.write('What pizza would you like to order');
-    String response = stdin.readLineSync() as String;
+    stdout.write('What pizza would you like to order? (press q to quit): ');
+    String response = (stdin.readLineSync() ?? '').trim().toLowerCase();
 
     if (response == 'margherita' ||
         response == 'pepperoni' ||
         response == 'vegetarian') {
       print('let me check price');
 
-      for (var key in pizzaPrices.keys) {
-        if (key == response) {
-          print(key.pizzaPrices);
-        }
-      }
+      final price = pizzaPrices[response];
+      total += price;
+
+      print('$response added: \$${price}');
+      print('total: \$${total}');
     } else if (response == 'q') {
       //quiting the ordering program
       print('Thanks for checking us');
