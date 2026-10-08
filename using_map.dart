@@ -1,8 +1,6 @@
 //creating and manipulating maps
 
 //entry point of the code
-import 'dart:ffi';
-
 void main() {
   Map<String, dynamic> person = {
     'firstName': 'Samuel',
