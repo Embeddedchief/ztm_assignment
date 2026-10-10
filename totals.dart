@@ -17,11 +17,11 @@ void main(List<String> argument) {
   final totalDurationByTag = <String, double>{};
 
   //for statement to loop through each lines of the file
-  for (var line in lines) {
+  for (var line in lines.skip(1)) {
     final values = line.split(',');
-    final durationStr = values[3].replaceAll("", '');
+    final durationStr = values[3].replaceAll('"', '');
     final duration = double.parse(durationStr);
-    final tag = values[5].replaceAll("", '');
+    final tag = values[5].replaceAll('"', '');
     final previousTotal = totalDurationByTag[tag];
 
     if (previousTotal == null) {
