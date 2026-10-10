@@ -13,8 +13,26 @@ void main(List<String> argument) {
   // make the system read each lines in the inputFile
   final lines = File(inputFile).readAsLinesSync();
 
+  //creating an emptly map totaldurarionbytag
+  final totalDurationByTag = <String, double>{};
+
   //for statement to loop through each lines of the file
   for (var line in lines) {
-    print(line);
+    final values = line.split(',');
+    final durationStr = values[3].replaceAll("", '');
+    final duration = double.parse(durationStr);
+    final tag = values[5].replaceAll("", '');
+    final previousTotal = totalDurationByTag[tag];
+
+    if (previousTotal == null) {
+      totalDurationByTag[tag] = duration;
+    } else {
+      totalDurationByTag[tag] = previousTotal + duration;
+    }
+  }
+  for (var entry in totalDurationByTag.entries) {
+    final durationFormatted = entry.value.toStringAsFixed(1);
+    final tag = entry.key == '' ? 'Unallocated' : entry.key;
+    print('$tag: ${durationFormatted}');
   }
 }
