@@ -8,6 +8,8 @@ class Product {
   final int id;
   final String name;
   final double price;
+
+  String get displayName => '$name: \$';
 }
 // create an item class
 // let it take product and quantity parameters
@@ -20,6 +22,8 @@ class Item {
 
   final Product product;
   final int quantity;
+
+  double get price => quantity * product.price;
 }
 
 //create a cart class
@@ -56,4 +60,9 @@ void main() {
       print("invalid input, select 1, 2 or 3 to move forward");
     }
   }
+}
+
+Product? chooseProduct() {
+  final productsList = allProducts.map((product)) => product.displayName).join('\n');
+  stdout.write('Available products: \n $productsList');
 }
