@@ -1,16 +1,31 @@
+import 'dart:io';
+
 // Create a product class
 // set it to take id, name and price parameters
 // create a const constructor for them and make it required
+class Product {
+  const Product({required this.id, required this.name, required this.price});
+  final int id;
+  final String name;
+  final double price;
+}
 // create an item class
 // let it take product and quantity parameters
 // create a const constructor for them and make it required
 // let quantity constructor euqal 1
 // create a getter method  to use quantiy*product.price
 
-//create a cart class
-//
+class Item {
+  Item({required this.quantity, required this.product});
 
-import 'dart:io';
+  final Product product;
+  final int quantity;
+}
+
+//create a cart class
+class Cart {}
+
+const allProducts = [Product(id: 1, name: 'apples', price: 2.30)];
 
 void main() {
   // create infinite loop
