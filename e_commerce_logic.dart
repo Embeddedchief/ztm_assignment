@@ -65,7 +65,7 @@ class Cart {
       return;
     }
 
-    print('\n--- YOUR CART ---');
+    print('\nThis is your order list: ');
 
     for (final item in _items) {
       print(
@@ -85,11 +85,13 @@ const allProducts = [
   Product(id: 1, name: 'Apples', price: 2.30),
   Product(id: 2, name: 'Bread', price: 3.50),
   Product(id: 3, name: 'Milk', price: 4.20),
+  Product(id: 3, name: 'Orange', price: 1.20),
+  Product(id: 3, name: 'Carrot', price: 2.20),
 ];
 
 // 5. Choose a product
 Product? chooseProduct() {
-  print('\n--- AVAILABLE PRODUCTS ---');
+  print('\nThis are the available products:');
 
   for (final product in allProducts) {
     print('${product.id}. ${product.displayName}');
